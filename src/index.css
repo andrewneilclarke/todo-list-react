@@ -1,8 +1,10 @@
 body {
+  background-color: antiquewhite;
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +12,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  font-weight: lighter;
+  font-size: large;
+}
+
+.header {
+  text-align: center;
+  font-family: cursive;  
+}
+
+.h1 {
+  margin: none;
+}
+.card {
+  outline: 1px solid black;
+  margin: none;
 }
