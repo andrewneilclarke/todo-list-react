@@ -1,10 +1,11 @@
+import { useState } from 'react'
 import propTypes from 'prop-types'
 import './App.css';
 import Card from './Card'
 import Header from './Header'
 
 function App() {
-  const stories = 
+  const [stories, showStories] = useState(
     [{
     "id": 1,
     "title": "The Three Pigs",
@@ -36,14 +37,16 @@ function App() {
   "title": "The Hungry Mouse",
   "text": `This is among the short bedtime stories for kids. It talks about how greed can get people into bad situations. There once was a mouse that was starving and had not eaten in days. He had grown really thin. After a lot of searching, the mouse found a basket full of corn. There was a tiny hole in the basket, through which he could just fit in. So, he crept into the basket and ate his fill of corn. However, he did not stop eating, once he was full. The mouse ate more and more, even though he was feeling full. Now, the mouse had grown larger from all that food and could no longer fit through the hole to get out. He was worried and wondered how to escape. A rat that was passing by heard the mouse and told him that he had to wait until he had grown thin again, in order to get out through that hole. The mouse regretted being greedy and overeating.`,
   },
-]
+])
 
-// const getStories = stories.map(element => element.Text);
-// const getTitles = stories.map(element => element.title);
+const toggleCard = (id) => {
+  showStories(stories.map(story => story.id === id ? console.log(id) : console.log('else')))}
+
+
   return (
     <div className="App">
       <Header />
-     <Card stories={stories} />
+     <Card stories={stories} onToggle={toggleCard} />
     </div>
   );
 }
