@@ -4,7 +4,7 @@ export const Card = ( { stories, onToggle } ) => {
                 {stories.map((story) => {
                     const { id, title, text } = story;
                     return (
-                        <div key={id} className="card" onDoubleClick={() => onToggle(id)}>
+                        <div key={id} className="card" onClick={() => onToggle(id)}>
                             <h1 key={title} className="title">{title}</h1> 
                             <p key={story.id} className="text">{story.open ? text : null }</p>
                         </div>

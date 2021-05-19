@@ -53,7 +53,7 @@ const toggleCard = (id) => {
 
 }
   return (
-    <div className="App">
+    <div className="App container">
       <Header />
      <Card stories={stories} onToggle={toggleCard} />
     </div>
