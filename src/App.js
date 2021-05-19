@@ -9,9 +9,24 @@ function App() {
     [{
     "id": 0,
     "title": "The Three Pigs",
-    "text": `Mrs Pig was very tired: 'Oh dear,' she said to her three little pigs, 'I can’t do this work anymore, 
-    I’m afraid you must leave home and make your own way in the world.' So the three little pigs set off.
-    The first little pig met a man carrying a bundle of straw. 'Excuse me,' said the first little pig politely.`,
+    "text": `Near the forest, there lives a mother pig, who has three little pigs. When the pigs are too big to live with their mother, she says to them, „This house is too small for you. Go and build your own houses. But take care that the wolf does not catch you.“
+    The first little pig builds his house from straw. He works all day long. When his house is finished, he is a very happy pig. He says, „Now I’m safe from the big, bad wolf.“
+    The second little pig says: „I will build a better house than yours. I will build my house from sticks.“ He works all day and all night. When his house is finished, he is a very happy pig. He says, „Now the big, bad wolf can’t catch me.“
+    The third little pig says, „I will build the best house! I will build my house from bricks.“ He works for two whole days. When his house is finished, he is a very happy pig. He says, „I’m safe from the big, bad wolf here.“
+    In the night, when it is dark and cold, the big, bad wolf comes out of the forest. He goes to the house made from straw and says, „Little pig, little pig, let me in!“
+    „Not by the hair of my chinny chin chin“, says the little pig.
+    The angry wolf takes a deep breath. With a huff and a puff, he blows the house down and the little pigs runs off to the house made of sticks.
+    Then the wolf goes to the house of sticks. He says, „Little pigs, little pigs, let me in!“
+    „Not by the hair on our chinny chin chins“, say the little pigs.
+    The wolf laughs. „What silly pigs!“, he says. With a huff and a puff, he blows the house down and again the little pigs run as fast as they can to the house made of bricks.
+    Then the wolf goes to the house made from bricks.
+    He says, „Little pig, little pig, let me in!“
+    Not by the hair on our chinny chin chins“, say the little pigs.
+    The wolf blows and blows but he cannot blow the house down.
+    The wolf gets very, very angry.
+    He says, „I will climb down your chimney to get you.“
+    The little pigs are  frightened. They light a big fire in the fireplace and puts a big pot of water on the fire, to boil. The wolf begins to climb up the house. Then he begins to climb down the chimney. Suddenly, he falls into the pot with a big splash. That is the end of the wolf. The third little pig was too clever for him.
+    The little pigs live happily ever after.`,
     "open": false,   
   },
   {"id": 1,
