@@ -1,4 +1,4 @@
-const Title = ( { titles }) => {
+const Title = ( { titles, onToggle, stories }) => {
     return (
         <div>
            {titles.map(t => <h3>{t}</h3>) }
