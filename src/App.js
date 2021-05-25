@@ -61,15 +61,19 @@ function App() {
   },
   ]
   })
-    
 
 const toggleCard = (id) => {
   showStories(stories.map(story => story.id === id ? { ...story, open: !story.open} : story ))
 }
+
+const deleteStory = (id) => {
+  showStories(stories.filter(story => story.id !== id))
+  console.log(id)
+}
   return (
     <div className="App container">
       <Header />
-     <Card stories={stories} onToggle={toggleCard} />
+     <Card stories={stories} onToggle={toggleCard} onDelete={deleteStory} />
     </div>
   );
 }
