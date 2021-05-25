@@ -19,6 +19,7 @@ const AddForm = ( { onAdd, stories } ) => {
         setTitle('')
         setStory('')
         setNewId(id)
+        setOpen(false)
     }
     return (
         <form className="add-form" onSubmit={onSubmit}>
