@@ -108,11 +108,3 @@ h1 {
   padding: 3px 7px;
   font-size: 17px;
 }
-
-.submit-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin-right: none;
-}

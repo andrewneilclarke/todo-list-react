@@ -1,4 +1,5 @@
 import { useState } from 'react'
+  
 
 const AddForm = ( { onAdd, stories } ) => {
     
@@ -29,7 +30,7 @@ const AddForm = ( { onAdd, stories } ) => {
                 <label>Story</label>
                 <input type="text" placeholder="Story" value={text} onChange={(e) => setStory(e.target.value)}/>
             </div>
-            <input type="submit" className="submit-button" className="btn btn-block" value="Save" />
+            <input type="submit" className={"btn btn-block"} value="Save" />
                
         </form>
     )
