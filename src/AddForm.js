@@ -5,7 +5,7 @@ const AddForm = ( { onAdd, stories } ) => {
     
     const [title, setTitle] = useState('')
     const [text, setStory] = useState('')
-    const [newId, setNewId] = useState(null)
+    const [newId, setNewId] = useState(2400)
     const [open, setOpen] = useState(false)
 
     const onSubmit = (e) => {
@@ -15,7 +15,7 @@ const AddForm = ( { onAdd, stories } ) => {
             alert('Please add a story')
             return
         }
-        onAdd( { title, text, id, open } )
+        onAdd( { title, text, newId, open } )
         setTitle('')
         setStory('')
         setNewId(id)
