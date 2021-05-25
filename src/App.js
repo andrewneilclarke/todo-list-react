@@ -73,7 +73,7 @@ const deleteStory = (id) => {
   return (
     <div className="App container">
       <Header />
-     <Card stories={stories} onToggle={toggleCard} onDelete={deleteStory} />
+     {stories.length > 0 ? <Card stories={stories} onToggle={toggleCard} onDelete={deleteStory} /> : 'No Stories to show'}
     </div>
   );
 }

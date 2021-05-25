@@ -31,11 +31,12 @@ p   {
 }
 
 .header {
+  display: flex;
+  align-items: center;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 28px;
-  margin: 0; 
-  margin-bottom: 0.5em;
+  margin: none; 
 }
 
 .h1 {
@@ -47,6 +48,38 @@ p   {
 }
 .title {
   margin: 0;
-  padding: 5;
+
+  display: flex;
+  /* padding: 5; */
+  /* border-bottom: 20px; */
+  align-items: center;
   font-size: large;
+}
+
+.btn {
+  display: inline-block;
+  background: rgb(232, 194, 252);
+  color: rgb(3, 3, 3);
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+  margin-left: 8em;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }

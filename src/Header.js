@@ -1,8 +1,14 @@
+import Button from './Button'
+
 export const Header = () => {
+    const onClick = () => {
+        console.log('Click')
+    }
     return (
-        <div>
-            <h1 className="header">Bedtime Stories</h1>
-        </div>
+        <header className="header">
+            <h4>Bedtime Stories</h4>
+            <Button color='rgb(232, 194, 252)' text='Add' onClick={onClick} />
+        </header>
     )
 }
 
