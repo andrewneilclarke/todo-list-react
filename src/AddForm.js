@@ -17,6 +17,7 @@ const AddForm = ( { onAdd, stories } ) => {
         onAdd( { title, text, id, open } )
         setTitle('')
         setStory('')
+        setNewId(id)
     }
     return (
         <form className="add-form" onSubmit={onSubmit}>
@@ -28,7 +29,7 @@ const AddForm = ( { onAdd, stories } ) => {
                 <label>Story</label>
                 <input type="text" placeholder="Story" value={text} onChange={(e) => setStory(e.target.value)}/>
             </div>
-            <input type="submit" className="submit-button" value="Save" className="btn btn-block" />
+            <input type="submit" className="submit-button" className="btn btn-block" value="Save" />
                
         </form>
     )

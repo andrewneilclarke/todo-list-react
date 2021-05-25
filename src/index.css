@@ -58,6 +58,7 @@ h1 {
 }
 
 .btn {
+  background-color: rgb(231, 208, 252);
   display: flex;
   border: none;
   padding: 10px 20px;
@@ -71,8 +72,8 @@ h1 {
   
 }
 
-.btn:focus {
-  outline: none;
+.btn:hover {
+  border: solid 1px black;
 }
 
 .btn:active {
@@ -83,7 +84,8 @@ h1 {
   width: 95%;
   height: 40px;
   margin: 5px;
-  padding: 3px 7px;
+  /* padding: 3px 7px; */
+  justify-content: center;
 }
 
 .add-form {
