@@ -37,9 +37,10 @@ p   {
   font-family: 'Poppins', sans-serif;
   font-size: 28px;
   margin: none; 
+  
 }
 
-.h1 {
+h1 {
   margin: 0;
 }
 .card {
@@ -57,18 +58,17 @@ p   {
 }
 
 .btn {
-  display: inline-block;
-  background: rgb(232, 194, 252);
-  color: rgb(3, 3, 3);
+  display: flex;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
-  margin-left: 8em;
+  margin-left: 10em;
+  text-align: center;
+  
 }
 
 .btn:focus {
@@ -80,6 +80,37 @@ p   {
 }
 
 .btn-block {
+  width: 95%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+}
+
+.add-form {
+  margin-bottom: 40px;
+}
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
   display: block;
-  width: 100%;
+  text-align:left;
+  font-weight: bold;
+}
+
+.form-control input {
+  width: 95%;
+  height: 30px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-right: none;
 }

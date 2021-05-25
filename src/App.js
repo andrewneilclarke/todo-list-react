@@ -3,9 +3,11 @@ import propTypes from 'prop-types'
 import './App.css';
 import Card from './Card'
 import Header from './Header'
+import AddForm from './AddForm'
 
 function App() {
-  const [stories, showStories] = useState(() => {
+  const [showAddStory, setAddStory] = useState(false)
+  const [stories, setStories] = useState(() => {
     return [{
       "id": 0,
       "title": "The Three Pigs",
@@ -62,17 +64,22 @@ function App() {
   ]
   })
 
+const addStory = ( newStory ) => {
+  setStories( [newStory, ...stories,])
+}
+
 const toggleCard = (id) => {
-  showStories(stories.map(story => story.id === id ? { ...story, open: !story.open} : story ))
+  setStories(stories.map(story => story.id === id ? { ...story, open: !story.open} : story ))
 }
 
 const deleteStory = (id) => {
-  showStories(stories.filter(story => story.id !== id))
-  console.log(id)
+  setStories(stories.filter(story => story.id !== id))
 }
+
   return (
     <div className="App container">
-      <Header />
+      <Header onAdd={() => setAddStory(!showAddStory)} showAdd={showAddStory}/>
+      {showAddStory && <AddForm onAdd={addStory} stories={stories}/> }
      {stories.length > 0 ? <Card stories={stories} onToggle={toggleCard} onDelete={deleteStory} /> : 'No Stories to show'}
     </div>
   );
