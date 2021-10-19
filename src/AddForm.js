@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { projectFirestore } from './firebase/config'
 
 
 const AddForm = ({ onAdd, stories }) => {
@@ -11,15 +12,17 @@ const AddForm = ({ onAdd, stories }) => {
     const onSubmit = (e) => {
         e.preventDefault();
         const id = Math.floor(Math.random() * 10000) + 1;
-        if (!text) {
-            alert('Please add a story')
+        if (!title) {
+            alert('Please enter task')
             return
         }
-        onAdd({ title, text, newId, open })
+        onAdd({ title, text, id, open })
         setTitle('')
         setStory('')
         setNewId(id)
         setOpen(false)
+        // add to firestore db
+        projectFirestore.collection('tasks').add({ title, text, id, open })
     }
     return (
         <form className="add-form" onSubmit={onSubmit}>
