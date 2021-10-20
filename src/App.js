@@ -19,7 +19,6 @@ function App() {
   const [showAddStory, setAddStory] = useState(false)
   const [stories, setStories] = useState([])
 
-
   // get tasks on render
   // useEffect(() => {
   //   const fetchTasks = () => {
@@ -36,18 +35,29 @@ function App() {
 
   // Fetch Tasks
   const fetchTasks = async () => {
-    const tasks = [];
     const response = await projectFirestore.collection('tasks').get()
+    const tasks = [];
+    // console.log(response.docs[0].data())
     response.docs.map((doc) => {
-      const { title, id } = doc.data()
-      const newTask = { title, id }
+      const newTask = { title: doc.data().title, id: doc.data().id }
+      // const { title, id } = doc.data().title
+      // const newTask = { title, id }
+      // console.log(newTask)
       tasks.push(newTask)
-      setStories(tasks)
+      return tasks
     })
+    setStories(tasks)
+    // console.log(tasks)
   }
 
+
   useEffect(() => {
-    fetchTasks()
+    const getTasks = async () => {
+      const tasksFromServer = await fetchTasks();
+      // setStories(tasksFromServer)
+    }
+    getTasks()
+
   }, [])
 
 
@@ -59,7 +69,7 @@ function App() {
     setStories(stories.map(story => story.id === id ? { ...story, open: !story.open } : story))
   }
 
-  const deleteStory = (id) => {
+  const deleteTask = (id) => {
     setStories(stories.filter(story => story.id !== id))
   }
   const clearInputs = () => {
@@ -128,11 +138,11 @@ function App() {
   return (
     <div className="App container">
       <Header user={user} handleLogout={handleLogout} onAdd={() => setAddStory(!showAddStory)} showAdd={showAddStory} />
-      {/* {stories.length > 0 ? (<Card stories={stories} onToggle={toggleCard} onDelete={deleteStory} />) : (
-        <div className="empty-list">No Tasks to show </div>)} */}
-      {stories && <Tasks stories={stories} />}
+      {stories.length > 0 ? (<Card stories={stories} onToggle={toggleCard} onDelete={deleteTask} />) : (
+        <div className="empty-list">No Tasks to show </div>)}
+      {/* {stories && <Tasks stories={stories} />} */}
       {/* {!user && <Login />} */}
-      {showAddStory && <AddForm onAdd={addStory} stories={stories} />}
+      {/* {showAddStory && <AddForm onAdd={addStory} stories={stories} />} */}
     </div>
   );
 }
