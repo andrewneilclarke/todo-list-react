@@ -5,25 +5,20 @@ import { projectFirestore } from './firebase/config'
 const AddForm = ({ onAdd, stories }) => {
 
     const [title, setTitle] = useState('')
-    const [text, setStory] = useState('')
-    const [newId, setNewId] = useState(2400)
-    const [open, setOpen] = useState(false)
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         const id = Math.floor(Math.random() * 10000) + 1;
         if (!title) {
             alert('Please enter task')
             return
         }
-        onAdd({ title, text, id, open })
+        onAdd({ title, id })
         setTitle('')
-        setStory('')
-        setNewId(id)
-        setOpen(false)
         // add to firestore db
-        projectFirestore.collection('tasks').add({ title, text, id, open })
+        await projectFirestore.collection('tasks').add({ title, id })
     }
+
     return (
         <form className="add-form" onSubmit={onSubmit}>
             <div className="form-control">

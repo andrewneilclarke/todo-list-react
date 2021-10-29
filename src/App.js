@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks();
-      // setStories(tasksFromServer)
+      console.log(tasksFromServer)
     }
     getTasks()
 
@@ -61,9 +61,6 @@ function App() {
     setStories([newStory, ...stories,])
   }
 
-  const toggleCard = (id) => {
-    setStories(stories.map(story => story.id === id ? { ...story, open: !story.open } : story))
-  }
 
   const deleteTask = (id) => {
     setStories(stories.filter(story => story.id !== id))
@@ -142,7 +139,7 @@ function App() {
     <div className="App container">
       <Header handleLogout={handleLogout} onAdd={() => setAddStory(!showAddStory)} showAdd={showAddStory} />
       {showAddStory && <AddForm onAdd={addStory} stories={stories} />}
-      {stories.length > 0 ? (<Card stories={stories} onToggle={toggleCard} onDelete={deleteTask} />) : (
+      {stories.length > 0 ? (<Card stories={stories} onDelete={deleteTask} />) : (
         <div className="empty-list">No Tasks to show </div>)}
       {/* {stories && <Tasks stories={stories} />} */}
       {/* {!user && <Login />} */}
