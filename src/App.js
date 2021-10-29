@@ -71,7 +71,14 @@ function App() {
 
   const deleteTask = (id) => {
     setStories(stories.filter(story => story.id !== id))
+    projectFirestore.collection('tasks').onSnapshot((snap) => {
+      snap.forEach(doc => {
+        doc.data().id === id && doc.ref.delete();
+      })
+    }
+    )
   }
+
   const clearInputs = () => {
     setEmail('');
     setPassword('');
@@ -138,11 +145,11 @@ function App() {
   return (
     <div className="App container">
       <Header user={user} handleLogout={handleLogout} onAdd={() => setAddStory(!showAddStory)} showAdd={showAddStory} />
+      {showAddStory && <AddForm onAdd={addStory} stories={stories} />}
       {stories.length > 0 ? (<Card stories={stories} onToggle={toggleCard} onDelete={deleteTask} />) : (
         <div className="empty-list">No Tasks to show </div>)}
       {/* {stories && <Tasks stories={stories} />} */}
       {/* {!user && <Login />} */}
-      {/* {showAddStory && <AddForm onAdd={addStory} stories={stories} />} */}
     </div>
   );
 }

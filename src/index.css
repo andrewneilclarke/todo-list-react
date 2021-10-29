@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,500&display=swap');
 :root {
-  --color-light: rgb(170, 200, 255);
-  --color-lighter: rgb(225, 227, 255);
+  
+  --color-dark: hsl(218, 61%, 13%);
+  --color-green: hsl(139, 44%, 52%);
+  --color-green-text: hsl(139, 44%, 85%);
+  
 }
 
 body {
-  background-color: hsla(219, 100%, 38%, 1);
+  background-color: var(--color-dark);
   margin: 0;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +46,7 @@ p   {
   margin: auto; 
 }
 .header h4 {
-  color: var(--color-light)
+  color: var(--color-green-text);
 }
 
 .card {
@@ -61,6 +64,7 @@ p   {
   display: flex;
   align-items: center;
   font-size: large;
+  color: var(--color-green-text);
 }
 
 .App {
@@ -68,7 +72,7 @@ p   {
 }
 
 .btn {
-  background-color: hsla(219, 100%, 18%, 1);
+  background-color: var(--color-green);
   display: flex;
   border: none;
   padding: 10px 20px;
@@ -80,7 +84,8 @@ p   {
   font-weight: bold;
   margin-left: 3em;
   text-align: center;
-  color: hsla(219, 100%, 88%, 1);
+  max-width: 18rem;
+  color: var(--color-green-text);
 }
 
 .btn:hover {
@@ -99,10 +104,14 @@ p   {
 }
 
 .add-form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 40px;
   max-width: 50vw;
-  align-content: center;
+  align-items: center;
   justify-content: center;
+  text-align: center;
 
 }
 .form-control {
@@ -116,7 +125,7 @@ p   {
 }
 
 .form-control input {
-  width: 95%;
+  max-width: 18rem;
   height: 30px;
   margin: 5px;
   padding: 3px 7px;
@@ -124,5 +133,5 @@ p   {
 }
 
 .empty-list {
-  color: var(--color-light);
+  color: var(--color-green-text);
 }
