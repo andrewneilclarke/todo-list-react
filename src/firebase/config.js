@@ -13,7 +13,7 @@ const firebaseConfig = {
 };
 
 // Google Auth
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+// const googleProvider = new firebase.auth.GoogleAuthProvider();
 
 // const signInWithGoogle = async () => {
 //     try {
@@ -38,14 +38,14 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 // };
 
 // Email auth
-const signInWithEmailAndPassword = async (email, password) => {
-    try {
-        await auth.signInWithEmailAndPassword(email, password);
-    } catch (err) {
-        console.error(err);
-        alert(err.message);
-    }
-};
+// const signInWithEmailAndPassword = async (email, password) => {
+//     try {
+//         await auth.signInWithEmailAndPassword(email, password);
+//     } catch (err) {
+//         console.error(err);
+//         alert(err.message);
+//     }
+// };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
