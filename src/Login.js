@@ -4,8 +4,8 @@ export default function Example({ handleLogin }) {
     return (
         <div style={{ 'color': 'var(--color-green)' }}>
             <div className="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <h1 className="text-6xl font-extrabold tracking-tight sm:text-7xl mb-8">My ToDos
-                    <span style={{ 'color': 'var(--color-green-text)' }} className="block">What will you do today?</span> </h1>
+                <h1 className="text-6xl font-extrabold tracking-tight sm:text-7xl mb-12">My ToDos
+                    <span style={{ 'color': 'var(--color-green-text)', 'margin-top': '1.5rem' }} className="block">What will you do today?</span> </h1>
                 <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
                     <span className="block">Boost your productivity.</span>
                     <span className="block">Get things done.</span>
