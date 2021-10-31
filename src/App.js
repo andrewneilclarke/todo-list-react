@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import Card from './Card'
 import Header from './Header'
 import AddForm from './AddForm'
+import Login from './Login'
 import { auth, projectFirestore } from './firebase/config'
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
   // const [emailError, setEmailError] = useState('')
   // const [passwordError, setPassworError] = useState('')
   // const [hasAccount, setHasAccount] = useState(false)
-
-  const [showAddStory, setAddStory] = useState(false)
-  const [stories, setStories] = useState([])
+  const [loggedin, setLoggedIn] = useState(false)
+  const [showAddTask, setShowAddTask] = useState(false)
+  const [tasks, setTasks] = useState([])
 
   // get tasks on render
   // useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
   //         const { title, id } = doc.data()
   //         const newTask = { title, id }
   //         tasks.push(newTask)
-  //         setStories(tasks)
+  //         setTasks(tasks)
   //   }
   //       fetchTasks()
   // }, [])
@@ -43,7 +44,7 @@ function App() {
       tasks.push(newTask)
       return tasks
     })
-    setStories(tasks)
+    setTasks(tasks)
   }
 
 
@@ -57,13 +58,13 @@ function App() {
   }, [])
 
 
-  const addStory = (newStory) => {
-    setStories([newStory, ...stories,])
+  const addTask = (newTask) => {
+    setTasks([newTask, ...tasks,])
   }
 
 
   const deleteTask = (id) => {
-    setStories(stories.filter(story => story.id !== id))
+    setTasks(tasks.filter(task => task.id !== id))
     projectFirestore.collection('tasks').onSnapshot((snap) => {
       snap.forEach(doc => {
         doc.data().id === id && doc.ref.delete();
@@ -82,6 +83,9 @@ function App() {
   //   setPassworError('');
   // }
 
+  const handleLogin = () => {
+    setLoggedIn(true)
+  }
   // const handleLogin = () => {
   //   clearErrors();
   //   auth.signInWithEmailAndPassword(email, password)
@@ -116,10 +120,13 @@ function App() {
   //       }
   //     })
   // }
-
   const handleLogout = () => {
-    auth.signOut();
+    setLoggedIn(false)
   }
+
+  // const handleLogout = () => {
+  //   auth.signOut();
+  // }
 
   // useEffect(() => {
   //   const authListener = () => {
@@ -136,18 +143,25 @@ function App() {
   // }, [user])
 
   return (
-    <div className="App container">
-      <Header handleLogout={handleLogout} onAdd={() => setAddStory(!showAddStory)} showAdd={showAddStory} />
-      {showAddStory && <AddForm onAdd={addStory} stories={stories} />}
-      {stories.length > 0 ? (<Card stories={stories} onDelete={deleteTask} />) : (
-        <div className="empty-list">No Tasks to show </div>)}
-      {/* {stories && <Tasks stories={stories} />} */}
-      {/* {!user && <Login />} */}
-    </div>
+    <>
+      {!loggedin ?
+        <div className="flex flex-col">
+          <Login handleLogin={handleLogin} />
+        </div> :
+        <div className="App container">
+          <Header handleLogout={handleLogout} onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+          {showAddTask && <AddForm onAdd={addTask} tasks={tasks} />}
+          {tasks.length > 0 ? (<Card tasks={tasks} onDelete={deleteTask} />) : (
+            <div className="empty-list">No Tasks to show </div>)}
+          {/* {tasks && <Tasks tasks={tasks} />} */}
+          {/* {!user && <Login />} */}
+        </div>
+      }
+    </>
   );
 }
 
 Card.propTypes = {
-  stories: propTypes.array.isRequired,
+  tasks: propTypes.array.isRequired,
 }
 export default App;

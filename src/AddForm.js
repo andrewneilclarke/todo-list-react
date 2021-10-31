@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { projectFirestore } from './firebase/config'
 
 
-const AddForm = ({ onAdd, stories }) => {
+const AddForm = ({ onAdd, tasks }) => {
 
     const [title, setTitle] = useState('')
 
