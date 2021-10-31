@@ -12,20 +12,18 @@ export default function Example({ handleLogin }) {
                 </h2>
                 <div className="mt-8 flex justify-center">
                     <div onClick={handleLogin} style={{ 'background-color': 'var(--color-green)' }} className="inline-flex rounded-md shadow">
-                        <a
-                            href="!#"
+                        <button
                             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white hover:bg-indigo-800"
                         >
                             Log in
-                        </a>
+                        </button>
                     </div>
                     <div className="ml-3 inline-flex">
-                        <a
-                            href="!#"
+                        <button
                             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
                         >
                             Learn more
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
