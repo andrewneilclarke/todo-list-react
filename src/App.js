@@ -142,7 +142,7 @@ function App() {
 
   return (
     <>
-      {user ? (<div className="App container h-screen">
+      {user ? (<div className="App container h-screen sm:m-2">
         <Header handleLogout={handleLogout} user={user} loggedin={loggedin} onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
         {showAddTask && <AddForm onAdd={addTask} tasks={tasks} user={user} />}
         {tasks.length > 0 && <Card tasks={tasks} onDelete={deleteTask} user={user} />}
