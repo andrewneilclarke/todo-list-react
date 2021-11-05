@@ -2,11 +2,11 @@
 export default function Example({ handleLogin, hasAccount, setHasAccount, handleSignup, email, setEmail, emailError, password, setPassword, passwordError }) {
 
     return (
-        <div style={{ 'color': 'var(--color-green)' }}>
-            <div className="flex flex-col items-center max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <h1 className="text-6xl font-extrabold tracking-tight sm:text-7xl mb-12">My ToDos
-                    <span style={{ 'color': 'var(--color-green-text)', 'marginTop': '1.5rem' }} className="block">What will you do today?</span> </h1>
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <div className="h-full w-full" style={{ 'color': 'var(--color-green)' }}>
+            <div className="flex flex-col items-center overflow-hidden max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+                <h1 className="text-5xl font-extrabold tracking-tight lg:text-6xl mb-12">My ToDos
+                    <span style={{ 'color': 'var(--color-green-text)', 'marginTop': '1.5rem' }} className="block sm:text-3xl">What will you do today?</span> </h1>
+                <h2 className="font-extrabold sm:text-3xl tracking-tight">
                     <span className="block">Boost your productivity.</span>
                     <span className="block">Get things done.</span>
                 </h2>

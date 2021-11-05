@@ -98,6 +98,7 @@ function App() {
             return;
         }
       })
+    setLoggedIn(true)
   }
 
   const handleSignup = () => {
@@ -129,13 +130,10 @@ function App() {
     const authListener = () => {
       auth.onAuthStateChanged(user => {
         if (user) {
-          console.log('user logged in ', user.email)
           clearInputs();
           setUser(user);
-          console.log(setLoggedIn)
         } else {
           setUser('')
-          console.log('user logged out')
         }
       })
     }
@@ -144,13 +142,13 @@ function App() {
 
   return (
     <>
-      {user ? (<div className="App container">
+      {user ? (<div className="App container h-screen">
         <Header handleLogout={handleLogout} user={user} loggedin={loggedin} onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
         {showAddTask && <AddForm onAdd={addTask} tasks={tasks} user={user} />}
         {tasks.length > 0 && <Card tasks={tasks} onDelete={deleteTask} user={user} />}
       </div>)
         :
-        (<div className="flex flex-col">
+        (<div className="flex flex-col h-screen overflow-hidden">
           <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignup={handleSignup} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwordError={passwordError} />
         </div>
         )}
