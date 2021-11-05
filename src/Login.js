@@ -2,8 +2,8 @@
 export default function Example({ handleLogin, hasAccount, setHasAccount, handleSignup, email, setEmail, emailError, password, setPassword, passwordError }) {
 
     return (
-        <div className="h-full w-full" style={{ 'color': 'var(--color-green)' }}>
-            <div className="flex flex-col items-center overflow-hidden max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div className="h-full w-full overflow-hidden" style={{ 'color': 'var(--color-green)' }}>
+            <div className="h-full w-full flex flex-col items-center overflow-hidden max-w-7xl mx-auto text-center py-8 px-4 sm:px-6 lg:px-8">
                 <h1 className="text-5xl font-extrabold tracking-tight lg:text-6xl mb-12">My ToDos
                     <span style={{ 'color': 'var(--color-green-text)', 'marginTop': '1.5rem' }} className="block sm:text-3xl">What will you do today?</span> </h1>
                 <h2 className="font-extrabold sm:text-3xl tracking-tight">

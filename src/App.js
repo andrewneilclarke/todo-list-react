@@ -148,7 +148,7 @@ function App() {
         {tasks.length > 0 && <Card tasks={tasks} onDelete={deleteTask} user={user} />}
       </div>)
         :
-        (<div className="flex flex-col h-screen overflow-hidden">
+        (<div className="flex flex-col h-screen w-screen overflow-hidden">
           <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignup={handleSignup} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwordError={passwordError} />
         </div>
         )}
