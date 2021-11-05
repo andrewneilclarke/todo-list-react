@@ -2,9 +2,12 @@ import { useState } from 'react'
 import { projectFirestore } from './firebase/config'
 
 
-const AddForm = ({ onAdd, tasks }) => {
+const AddForm = ({ onAdd, tasks, user }) => {
 
     const [title, setTitle] = useState('')
+    const userid = user.uid;
+    console.log('current user id - ', userid)
+
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -13,10 +16,10 @@ const AddForm = ({ onAdd, tasks }) => {
             alert('Please enter task')
             return
         }
-        onAdd({ title, id })
+        onAdd({ title, id, userid })
         setTitle('')
         // add to firestore db
-        await projectFirestore.collection('tasks').add({ title, id })
+        await projectFirestore.collection('tasks').add({ title, id, userid })
     }
 
     return (

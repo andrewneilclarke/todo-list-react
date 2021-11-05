@@ -124,14 +124,17 @@ function App() {
     auth.signOut();
   }
 
+  // authentication change
   useEffect(() => {
     const authListener = () => {
       auth.onAuthStateChanged(user => {
         if (user) {
+          console.log('user logged in ', user.email)
           clearInputs();
           setUser(user)
         } else {
           setUser('')
+          console.log('user logged out')
         }
       })
     }
@@ -142,8 +145,8 @@ function App() {
     <>
       {user ? (<div className="App container">
         <Header handleLogout={handleLogout} user={user} loggedin={loggedin} onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-        {showAddTask && <AddForm onAdd={addTask} tasks={tasks} />}
-        {tasks.length > 0 && <Card tasks={tasks} onDelete={deleteTask} />}
+        {showAddTask && <AddForm onAdd={addTask} tasks={tasks} user={user} />}
+        {tasks.length > 0 && <Card tasks={tasks} onDelete={deleteTask} user={user} />}
       </div>)
         :
         (<div className="flex flex-col">

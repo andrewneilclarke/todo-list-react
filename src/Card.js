@@ -1,9 +1,11 @@
 import { FaTimesCircle } from 'react-icons/fa'
 
-export const Card = ({ tasks, onDelete }) => {
+export const Card = ({ tasks, onDelete, user }) => {
+    const userid = user.uid;
+    const userTasks = tasks.filter(task => task.userid === userid)
     return (
         <div>
-            {tasks.map((task) => {
+            {userTasks.map((task) => {
                 const { id, title } = task;
                 return (
                     <div key={id} className="card">
