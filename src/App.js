@@ -131,7 +131,8 @@ function App() {
         if (user) {
           console.log('user logged in ', user.email)
           clearInputs();
-          setUser(user)
+          setUser(user);
+          console.log(setLoggedIn)
         } else {
           setUser('')
           console.log('user logged out')
