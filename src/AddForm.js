@@ -6,7 +6,7 @@ const AddForm = ({ onAdd, tasks, user }) => {
 
     const [title, setTitle] = useState('')
     const userid = user.uid;
-    console.log('current user id - ', userid)
+    // console.log('current user id - ', userid)
 
 
     const onSubmit = async (e) => {

@@ -11,7 +11,7 @@ export const Header = ({ onAdd, showAdd, handleLogout, user }) => {
                 <>
                     <p>Welcome <span className="username mr-2">{user.email}</span></p>
                 </>}
-            <Button onClick={handleLogout} text={'Log out'} />
+            <Button onClick={handleLogout} text={'Sign out'} />
 
         </header>
     )
