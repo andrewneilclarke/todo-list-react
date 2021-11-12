@@ -12,11 +12,11 @@ export default function Example({ handleLogin, hasAccount, setHasAccount, handle
                 </h2>
                 <div className="mt-8 flex justify-center mb-12 font-extrabold">
                     <form className="flex flex-col">
-                        <label>Email</label>
-                        <input className="rounded-md mt-2 mb-2" type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <label htmlFor="email">Email</label>
+                        <input className="rounded-md mt-2 mb-2" type="text" name="email" id="email" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} />
                         {emailError && <p className="errorMsg">{emailError}</p>}
-                        <label>Password</label>
-                        <input className="rounded-md mt-2" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <label htmlFor="password">Password</label>
+                        <input className="rounded-md mt-2" type="password" name="password" id="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                         {passwordError && <p className="errorMsg">{passwordError}</p>}
                     </form>
                 </div>
